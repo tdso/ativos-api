@@ -1,0 +1,11 @@
+1 - Ler artigos lombok
+
+https://receitasdecodigo.com.br/java/como-usar-o-lombok-em-projetos-java#:~:text=O%20Lombok%20%C3%A9%20um%20framework,padr%C3%A3o%20builder%20e%20muito%20mais.
+
+https://medium.com/collabcode/projeto-lombok-escrevendo-menos-c%C3%B3digo-em-java-8fc87b379209
+
+https://projectlombok.org/features/all
+
+2 - Datas com Java 8
+https://www.devmedia.com.br/como-manipular-datas-com-o-java-8/34135
+
