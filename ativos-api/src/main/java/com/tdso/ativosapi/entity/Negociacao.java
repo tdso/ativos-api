@@ -34,6 +34,29 @@ public class Negociacao implements Serializable{
 
     }
 
+    @Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((idNegociacao == null) ? 0 : idNegociacao.hashCode());
+		return result;
+	}
 
+    @Override
+    public boolean equals(Object obj){
+        if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Negociacao other = (Negociacao) obj;
+		if (idNegociacao == null) {
+			if (other.idNegociacao != null)
+				return false;
+		} else if (!idNegociacao.equals(other.idNegociacao))
+			return false;
+		return true;        
+    }
 }
 
