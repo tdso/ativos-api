@@ -48,8 +48,10 @@ public class NegociacaoResource {
     }
 
     @RequestMapping(value = "/{idNegociacao}", method = RequestMethod.DELETE)
-    public ResponseEntity deleteAtivos(@PathVariable("idNegociacao") Long idNeg) {
+    public ResponseEntity deleteAtivos(@PathVariable("idNegociacao") String idNegociacao) {
         try {
+            System.out.println("id = " + idNegociacao);
+            Long idNeg = Long.parseLong(idNegociacao);
             service.deleteNegociacao(idNeg);
             return ResponseEntity.ok().body("Exclusao efetuada !!");
         } catch (Exception e) {

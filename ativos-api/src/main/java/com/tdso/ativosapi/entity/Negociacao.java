@@ -58,5 +58,18 @@ public class Negociacao implements Serializable{
 			return false;
 		return true;        
     }
+  
+
+    @Override
+    public String toString() {
+        return "{" +
+            " idNegociacao='" + getIdNegociacao() + "'" +
+            ", idAtivo='" + getIdAtivo() + "'" +
+            ", dataOperacao='" + getDataOperacao() + "'" +
+            ", quantidade='" + getQuantidade() + "'" +
+            ", preco='" + getPreco() + "'" +
+            ", tipoOperacao='" + getTipoOperacao() + "'" +
+            "}";
+    }
 }
 
