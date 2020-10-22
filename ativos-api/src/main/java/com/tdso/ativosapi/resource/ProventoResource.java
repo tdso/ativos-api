@@ -61,9 +61,10 @@ public class ProventoResource {
     }
 
     // - id
-    @RequestMapping(value = "/id", method = RequestMethod.DELETE)
-    public ResponseEntity deleteProvento(@PathVariable("id") Long id){
-            service.deleteProvento(id);
+    @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
+    public ResponseEntity deleteProvento(@PathVariable("id") String id) throws Exception {
+            Long idL = Long.parseLong(id);
+            service.deleteProvento(idL);
             return ResponseEntity.ok().body("Exclusao ok");
     }
 

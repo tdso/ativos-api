@@ -21,8 +21,19 @@ public class ProventoService {
     public List<Provento> getProventoByDataPagto(String dt_pgto) {
         LocalDate datapgto;
         if (dt_pgto.isEmpty()){
-            // >> pegar mes anterior + ano
             datapgto = LocalDate.now();
+            Integer mes = datapgto.getMonthValue();
+            Integer ano = datapgto.getYear();
+            if (mes == 1) {
+                ano = ano - 1;
+                mes = 12;
+            } else {
+                mes = mes - 1;
+            }
+            String mesTxt = String.valueOf(mes);
+            if (mesTxt.length() == 1) mesTxt = '0' + mesTxt; 
+            String dataTxt = String.valueOf(ano) + "-" + mesTxt + "-" + "01";
+            datapgto = LocalDate.parse(dataTxt);
         } else {
             datapgto = LocalDate.parse(dt_pgto);
         }

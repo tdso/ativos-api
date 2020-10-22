@@ -16,7 +16,7 @@ public interface ProventoRepository extends JpaRepository<Provento, Long> {
     @Query("SELECT obj FROM Provento obj WHERE obj.dataPagamento = :datapgto")
     List<Provento> findProvByDate(@Param("datapgto") LocalDate datapgto);
 
-    @Query("SELECT obj FROM Provento obj WHERE obj.dataPagamento = :datapgto AND obj.ativo = :ativo AND obj.tipoProvento = prov")
+    @Query("SELECT obj FROM Provento obj WHERE obj.dataPagamento = :datapgto AND obj.ativo = :ativo AND obj.tipoProvento = :prov")
     List<Provento> findProvByCustom(@Param("datapgto") LocalDate datapgto,
                                     @Param("ativo") String ativo,
                                     @Param("prov") Integer prov );    
@@ -25,7 +25,7 @@ public interface ProventoRepository extends JpaRepository<Provento, Long> {
     List<Provento> findProvByAtivo(@Param("datapgto") LocalDate datapgto,
                                    @Param("ativo") String ativo);    
 
-    @Query("SELECT obj FROM Provento obj WHERE obj.dataPagamento = :datapgto AND obj.tipoProvento = prov")
+    @Query("SELECT obj FROM Provento obj WHERE obj.dataPagamento = :datapgto AND obj.tipoProvento = :prov")
     List<Provento> findProvByTipo(@Param("datapgto") LocalDate datapgto,
                                   @Param("prov") Integer prov );    
                                                                 
